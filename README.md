@@ -32,26 +32,31 @@ Optional: drop the ruler, the locus label or whole tracks; tidy or rename track 
 
 ## Install
 
-minIGV is a single file using only the Python standard library (Python ≥ 3.9; tested with 3.9, 3.11, 3.12 and 3.14).
-
 ```bash
-git clone https://github.com/yu-kuai/minIGV.git
-cd minIGV
-python minigv.py --help
+pip install git+https://github.com/yu-kuai/minIGV
 ```
 
-The Jupyter widget additionally needs `ipywidgets` (`pip install ipywidgets`).
+This installs the `minigv` command and the `minigv` Python module. It needs only the
+Python standard library (Python ≥ 3.9; tested with 3.9, 3.11, 3.12 and 3.14).
+For the Jupyter widget, include the `interactive` extra (adds `ipywidgets`):
+
+```bash
+pip install "minigv[interactive] @ git+https://github.com/yu-kuai/minIGV"
+```
+
+No install needed if you prefer: `minigv.py` is a single file — download it and run
+`python minigv.py ...`.
 
 ## Usage
 
 ### Command line
 
 ```bash
-python minigv.py snapshot.svg                      # -> snapshot.clean.svg
-python minigv.py snapshot.svg -o figure.svg --drop-ruler
-python minigv.py *.svg -o cleaned/ --report        # batch; print what was changed
-python minigv.py snapshot.svg --list-tracks        # track names, for --drop-track
-python minigv.py snapshot.svg --drop-track "H3K36me3" --drop-track "ATAC-seq"
+minigv snapshot.svg                      # -> snapshot.clean.svg
+minigv snapshot.svg -o figure.svg --drop-ruler
+minigv *.svg -o cleaned/ --report        # batch; print what was changed
+minigv snapshot.svg --list-tracks        # track names, for --drop-track
+minigv snapshot.svg --drop-track "H3K36me3" --drop-track "ATAC-seq"
 ```
 
 ### Python / Jupyter

@@ -6,3 +6,6 @@ __pycache__/
 !examples/output/*.clean.svg
 igv*.log
 notebooks/cleaned/
+build/
+dist/
+*.egg-info/

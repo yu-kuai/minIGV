@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minigv"
+dynamic = ["version"]
+description = "Minimal, figure-ready IGV snapshots: clean IGV desktop SVG exports for publication figures"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "yu-kuai" }]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["IGV", "genome browser", "SVG", "figures", "bioinformatics", "genomics"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+
+[project.optional-dependencies]
+interactive = ["ipywidgets>=7", "ipython"]
+
+[project.scripts]
+minigv = "minigv:main"
+
+[project.urls]
+Homepage = "https://github.com/yu-kuai/minIGV"
+Issues = "https://github.com/yu-kuai/minIGV/issues"
+
+[tool.setuptools]
+py-modules = ["minigv"]
+
+[tool.setuptools.dynamic]
+version = { attr = "minigv.__version__" }

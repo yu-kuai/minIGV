@@ -14,9 +14,12 @@ Only the Python standard library is needed.
 
 Usage
 -----
-    python minigv.py snapshot.svg                 # writes snapshot.clean.svg
-    python minigv.py snapshot.svg -o figure.svg --drop-ruler
-    python minigv.py *.svg --report               # batch, print what was removed
+    minigv snapshot.svg                           # writes snapshot.clean.svg
+    minigv snapshot.svg -o figure.svg --drop-ruler
+    minigv *.svg --report                         # batch, print what was removed
+
+(installed with `pip install git+https://github.com/yu-kuai/minIGV`;
+`python minigv.py ...` works the same from a checkout)
 
 In Python / Jupyter:
 
@@ -65,6 +68,8 @@ Notes
   if you see "No module named expat", run with another interpreter such as
   /usr/bin/python3 or conda's python.
 """
+
+__version__ = "0.1.0"
 
 import argparse
 import csv
@@ -922,7 +927,7 @@ def cli_line(path, out=None, **kw):
              "keep_ideogram": "--keep-ideogram", "keep_span": "--keep-span", "keep_gaps": "--keep-gaps",
              "drop_ruler": "--drop-ruler", "drop_locus": "--drop-locus", "tidy_names": "--tidy-names",
              "keep_ext": "--keep-ext"}
-    parts = ["python", "minigv.py", shlex.quote(path)]
+    parts = ["minigv", shlex.quote(path)]
     if out:
         parts += ["-o", shlex.quote(out)]
     for k, f in flags.items():
@@ -1047,6 +1052,7 @@ def interactive(path, width="100%"):
 def main(argv=None):
     p = argparse.ArgumentParser(description="minIGV: remove IGV screen chrome from IGV desktop SVG snapshots for figures.",
                                 formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__.split("Usage")[1])
+    p.add_argument("--version", action="version", version="minIGV " + __version__)
     p.add_argument("svg", nargs="+", help="IGV desktop SVG file(s)")
     p.add_argument("-o", "--output", help="output file (single input) or directory (several inputs); "
                                           "default: <name>.clean.svg next to the input")

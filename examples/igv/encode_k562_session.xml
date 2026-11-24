@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Public ENCODE K562 data (GRCh38), streamed from encodeproject.org -->
+<Session genome="hg38" hasGeneTrack="true" hasSequenceTrack="true" locus="chr7:27090000-27250000" version="8">
+    <Resources>
+        <Resource name="H3K4me3" color="31,119,180" type="bigwig"
+                  path="https://www.encodeproject.org/files/ENCFF806YEZ/@@download/ENCFF806YEZ.bigWig"/>
+        <Resource name="H3K27me3" color="214,39,40" type="bigwig"
+                  path="https://www.encodeproject.org/files/ENCFF242ENK/@@download/ENCFF242ENK.bigWig"/>
+        <Resource name="H3K36me3" color="44,160,44" type="bigwig"
+                  path="https://www.encodeproject.org/files/ENCFF317VHO/@@download/ENCFF317VHO.bigWig"/>
+        <Resource name="Pol II pS2" color="255,127,14" type="bigwig"
+                  path="https://www.encodeproject.org/files/ENCFF434PYZ/@@download/ENCFF434PYZ.bigWig"/>
+        <Resource name="ATAC-seq" color="120,120,120" type="bigwig"
+                  path="https://www.encodeproject.org/files/ENCFF754EAC/@@download/ENCFF754EAC.bigWig"/>
+        <Resource name="H3K4me3 peaks" color="31,119,180" type="bed"
+                  path="https://www.encodeproject.org/files/ENCFF246IEW/@@download/ENCFF246IEW.bed.gz"/>
+        <Resource name="H3K27me3 peaks" color="214,39,40" type="bed"
+                  path="https://www.encodeproject.org/files/ENCFF315MMU/@@download/ENCFF315MMU.bed.gz"/>
+    </Resources>
+    <Panel name="DataPanel">
+        <Track attributeKey="H3K4me3" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="31,119,180" fontSize="10" id="https://www.encodeproject.org/files/ENCFF806YEZ/@@download/ENCFF806YEZ.bigWig" name="H3K4me3" renderer="BAR_CHART" visible="true" windowFunction="mean"/>
+        <Track attributeKey="H3K27me3" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="214,39,40" fontSize="10" id="https://www.encodeproject.org/files/ENCFF242ENK/@@download/ENCFF242ENK.bigWig" name="H3K27me3" renderer="BAR_CHART" visible="true" windowFunction="mean"/>
+        <Track attributeKey="H3K36me3" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="44,160,44" fontSize="10" id="https://www.encodeproject.org/files/ENCFF317VHO/@@download/ENCFF317VHO.bigWig" name="H3K36me3" renderer="BAR_CHART" visible="true" windowFunction="mean"/>
+        <Track attributeKey="Pol II pS2" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="255,127,14" fontSize="10" id="https://www.encodeproject.org/files/ENCFF434PYZ/@@download/ENCFF434PYZ.bigWig" name="Pol II pS2" renderer="BAR_CHART" visible="true" windowFunction="mean"/>
+        <Track attributeKey="ATAC-seq" autoScale="true" clazz="org.broad.igv.track.DataSourceTrack" color="120,120,120" fontSize="10" id="https://www.encodeproject.org/files/ENCFF754EAC/@@download/ENCFF754EAC.bigWig" name="ATAC-seq" renderer="BAR_CHART" visible="true" windowFunction="mean"/>
+    </Panel>
+    <Panel name="FeaturePanel">
+        <Track attributeKey="Refseq Genes" clazz="org.broad.igv.track.FeatureTrack" fontSize="10" id="hg38_genes" name="Refseq Genes" visible="true"/>
+        <Track attributeKey="H3K4me3 peaks" clazz="org.broad.igv.track.FeatureTrack" color="31,119,180" displayMode="COLLAPSED" fontSize="10" id="https://www.encodeproject.org/files/ENCFF246IEW/@@download/ENCFF246IEW.bed.gz" name="H3K4me3 peaks" visible="true"/>
+        <Track attributeKey="H3K27me3 peaks" clazz="org.broad.igv.track.FeatureTrack" color="214,39,40" displayMode="COLLAPSED" fontSize="10" id="https://www.encodeproject.org/files/ENCFF315MMU/@@download/ENCFF315MMU.bed.gz" name="H3K27me3 peaks" visible="true"/>
+    </Panel>
+</Session>
